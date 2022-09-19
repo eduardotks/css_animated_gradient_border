@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fabuga {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            height: 10rem;
+            width: 10rem;
+            border-radius: 100px;
+            background: #111827;
+            box-shadow: black;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .fabuga::after {
+            content: "**";
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            height: calc(100% + 20px);
+            width: calc(100% + 20px);
+            background: linear-gradient(35deg, deepskyblue, deeppink, lawngreen);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(3px);
+
+        }
+
+        .fabuga:hover::after {
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button class="fabuga">
+        botão
+    </button>
+</body>
+
+</html>
